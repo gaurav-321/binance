@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="col-xl-6 col-sm-12 col-md-12 content-section d-flex justify-content-center mx-auto">
+    <div class="form_wrapper">
+
+        <div class="form_container ">
+            <div class="title_container">
+                <h2>Registration</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form method="POST" action="/registers">
+                        {{ form.hidden_tag() }}
+                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                            {% if form.username.errors %}
+                            {{ form.username(placeholder="Username") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.username(placeholder="Username") }}
+                            {% endif %}
+                        </div>
+                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                            {% if form.email.errors %}
+                            {{ form.email(placeholder="Email") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.email(placeholder="Email") }}
+                            {% endif %}
+                        </div>
+                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                            {% if form.password.errors %}
+                            {{ form.password(placeholder="Password") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.password(placeholder="Password") }}
+                            {% endif %}
+                        </div>
+                        <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                            {% if form.confirm_password.errors %}
+                            {{ form.confirm_password(placeholder="Confirm Password") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.confirm_password(placeholder="Confirm Password") }}
+                            {% endif %}
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col_half">
+                                <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                                    {{ form.fName(placeholder="First Name") }}
+                                </div>
+                            </div>
+                            <div class="col_half">
+                                <div class="input_field"><span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                    <div class="input_field"><span><i aria-hidden="true"
+                                                                      class="fa fa-envelope"></i></span>
+                                        {{ form.lName(placeholder="Last Name") }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% if form.lName.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.lName.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+                            {% endif %}
+                            {% if form.fName.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <div class="input_field checkbox_option">
+                                <input type="checkbox" id="cb1" required="True">
+                                <label for="cb1">I agree with terms and conditions</label>
+                            </div>
+                            {{ form.submit(class="button", type="submit", value="Register") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
