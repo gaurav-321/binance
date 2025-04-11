@@ -1,2 +1,0 @@
-key = "pLTG9z4bKUb231uDPy1CVugCPHDKPxAz8kQxb4qWfcIfMgeGuVgIDBgxbJgV2mi5"
-security = "2BOl3kEaDcYU72W0I6EYvZkJM69QxG3QMCJGSdGVn2gJRodanScFtJ5Wigez58xl"
